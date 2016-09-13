@@ -21,6 +21,8 @@ public class Account {
     @JsonField
     private Double amount;
 
+    public Account() {
+    }
 
     public String getId() {
         return id;

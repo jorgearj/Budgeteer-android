@@ -1,0 +1,75 @@
+{
+  "accounts": [
+    {
+      "id":"acc_1",
+      "name": "CGD",
+      "amount": 2456.7,
+      "type": "check"
+    },
+    {
+      "id":"acc_2",
+      "name": "Santander",
+      "amount": 5,
+      "type": "check"
+    },
+    {
+      "id":"acc_3",
+      "name": "BES",
+      "amount": 136.2,
+      "type": "check"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat_1",
+      "name": "Monthly Bills",
+      "envelopes": [
+        {
+          "id": "env_3",
+          "name": "Renda",
+          "amount": 0.0,
+          "type":"",
+          "categoryId": "cat_1"
+        },
+        {
+          "id": "env_4",
+          "name": "Ginásio",
+          "amount": 0.0,
+          "type":"",
+          "categoryId": "cat_1"
+        }
+      ]
+    },
+    {
+      "id": "cat_2",
+      "name": "Poupanças",
+      "envelopes": [
+        {
+          "id": "env_1",
+          "name": "Férias",
+          "amount": 700.0,
+          "type":"",
+          "categoryId": "cat_2"
+        },
+        {
+          "id": "env_2",
+          "name": "Compras",
+          "amount": 0.0,
+          "type":"",
+          "categoryId": "cat_2"
+        }
+      ]
+    }
+  ],
+  "envelopes": [
+    {
+      "id": "env_1",
+      "name": "Extras",
+      "amount": 100.0,
+      "type":""
+    }
+  ],
+  "settings": {
+    "coin": "euro"
+  }
+}

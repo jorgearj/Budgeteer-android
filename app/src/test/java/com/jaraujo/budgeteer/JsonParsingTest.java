@@ -2,12 +2,14 @@ package com.jaraujo.budgeteer;
 
 import com.bluelinelabs.logansquare.LoganSquare;
 import com.jaraujo.budgeteer.models.Account;
+import com.jaraujo.budgeteer.models.BudgetStruct;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,8 +23,7 @@ public class JsonParsingTest {
 
     @Before
     public void setup() throws IOException {
-        testFile = new File("account.json");
-        testFile.createNewFile();
+
     }
 
     @Test
@@ -44,6 +45,13 @@ public class JsonParsingTest {
 
         System.out.println(LoganSquare.serialize(list));
 
+    }
+
+    @Test
+    public void parseBudgetStruct() throws IOException {
+        InputStream is = ClassLoader.getSystemResourceAsStream("example_budget.json");
+        BudgetStruct budget = LoganSquare.parse(is, BudgetStruct.class);
+        System.out.println(budget.toString());
     }
 
     @Test

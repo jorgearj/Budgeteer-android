@@ -19,15 +19,10 @@
             </intent-filter>
         </activity>
 
-        <service
-            android:name=".services.SyncDatabaseService"
-            android:enabled="true"
-            android:exported="true" />
 
         <activity
-            android:name=".account.AccountsActivity"
-            android:label="@string/title_activity_accounts"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:name=".transactions.NewTransactionActivity"
+            android:label="@string/title_activity_new_transaction"></activity>
     </application>
 
 </manifest>

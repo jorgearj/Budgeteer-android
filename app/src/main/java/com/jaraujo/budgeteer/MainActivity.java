@@ -13,12 +13,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.jaraujo.budgeteer.exceptions.ReadDataException;
+import com.jaraujo.budgeteer.models.BudgetStruct;
+import com.jaraujo.budgeteer.utils.JsonDataParser;
+
+import java.io.InputStream;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        InputStream is = this.getResources().openRawResource(R.raw.example_budget);
+
+        JsonDataParser parser = new JsonDataParser();
+
+        try {
+            BudgetStruct budget = parser.readBudgetStruct(is);
+        } catch (ReadDataException e) {
+            e.printStackTrace();
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,17 +98,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_accounts) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_envelopes) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_budget) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_reports) {
 
         }
 
